@@ -13,6 +13,7 @@
 		5F2CF97A2275E0AD0033A54B /* CatDoors.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 5F2CF9782275E0AD0033A54B /* CatDoors.xcdatamodeld */; };
 		5F2CF97C2275E0B20033A54B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5F2CF97B2275E0B20033A54B /* Assets.xcassets */; };
 		5F2CF97F2275E0B20033A54B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5F2CF97D2275E0B20033A54B /* LaunchScreen.storyboard */; };
+		E65D34D7580610D9EE2CE70D /* Pods_CatDoors.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7D73C4CA6015956B25C68697 /* Pods_CatDoors.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,6 +25,9 @@
 		5F2CF97B2275E0B20033A54B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		5F2CF97E2275E0B20033A54B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		5F2CF9802275E0B20033A54B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		763C88B86DD5E0966E297A59 /* Pods-CatDoors.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDoors.debug.xcconfig"; path = "Target Support Files/Pods-CatDoors/Pods-CatDoors.debug.xcconfig"; sourceTree = "<group>"; };
+		7D73C4CA6015956B25C68697 /* Pods_CatDoors.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CatDoors.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CC9F351F2A7727D28DB3C288 /* Pods-CatDoors.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CatDoors.release.xcconfig"; path = "Target Support Files/Pods-CatDoors/Pods-CatDoors.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -31,17 +35,38 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				E65D34D7580610D9EE2CE70D /* Pods_CatDoors.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		38180DE90046B928351E6C99 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				7D73C4CA6015956B25C68697 /* Pods_CatDoors.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		56054A89651EE34552A96710 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				763C88B86DD5E0966E297A59 /* Pods-CatDoors.debug.xcconfig */,
+				CC9F351F2A7727D28DB3C288 /* Pods-CatDoors.release.xcconfig */,
+			);
+			name = Pods;
+			path = Pods;
+			sourceTree = "<group>";
+		};
 		5F2CF9652275E0AD0033A54B = {
 			isa = PBXGroup;
 			children = (
 				5F2CF9702275E0AD0033A54B /* CatDoors */,
 				5F2CF96F2275E0AD0033A54B /* Products */,
+				56054A89651EE34552A96710 /* Pods */,
+				38180DE90046B928351E6C99 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -74,9 +99,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 5F2CF9832275E0B20033A54B /* Build configuration list for PBXNativeTarget "CatDoors" */;
 			buildPhases = (
+				142A1887BAD1309CE7C00FBF /* [CP] Check Pods Manifest.lock */,
 				5F2CF96A2275E0AD0033A54B /* Sources */,
 				5F2CF96B2275E0AD0033A54B /* Frameworks */,
 				5F2CF96C2275E0AD0033A54B /* Resources */,
+				892B343E8F8555CBEADE43A9 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -132,6 +159,53 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		142A1887BAD1309CE7C00FBF /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CatDoors-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		892B343E8F8555CBEADE43A9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-CatDoors/Pods-CatDoors-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-CatDoors/Pods-CatDoors-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		5F2CF96A2275E0AD0033A54B /* Sources */ = {
@@ -284,6 +358,7 @@
 		};
 		5F2CF9842275E0B20033A54B /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 763C88B86DD5E0966E297A59 /* Pods-CatDoors.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
@@ -302,6 +377,7 @@
 		};
 		5F2CF9852275E0B20033A54B /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CC9F351F2A7727D28DB3C288 /* Pods-CatDoors.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;

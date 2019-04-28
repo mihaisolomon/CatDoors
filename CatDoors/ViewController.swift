@@ -8,13 +8,28 @@
 
 import UIKit
 
+import Alamofire;
+
 class ViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
     }
-
-
+    
+    @IBAction func lockDoor(_ sender: Any) {
+        AF.request("http://abdulrahmanhu.com/door-lock", method: .get)
+            .responseJSON { response in
+                debugPrint(response)
+        }
+    }
+    
+    @IBAction func openDoor(_ sender: Any) {
+        AF.request("http://abdulrahmanhu.com/door-open", method: .get)
+            .responseJSON { response in
+                debugPrint(response)
+        }
+    }
+    
 }
 
