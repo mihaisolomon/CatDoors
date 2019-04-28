@@ -45,6 +45,15 @@
                                     <action selector="getGPS:" destination="BYZ-38-t0r" eventType="touchUpInside" id="TSI-Wx-qaV"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVf-AL-eZJ">
+                                <rect key="frame" x="233" y="108" width="139" height="43"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
+                                <state key="normal" title="Capture"/>
+                                <connections>
+                                    <action selector="getPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jhA-jd-W7F"/>
+                                </connections>
+                            </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uRD-Ey-YuP">
                                 <rect key="frame" x="65" y="243" width="308" height="31"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -87,15 +96,10 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BVf-AL-eZJ">
-                                <rect key="frame" x="233" y="108" width="139" height="43"/>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="tVh-Aw-dfr">
+                                <rect key="frame" x="99" y="611" width="240" height="128"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="30"/>
-                                <state key="normal" title="Capture"/>
-                                <connections>
-                                    <action selector="getPicture:" destination="BYZ-38-t0r" eventType="touchUpInside" id="jhA-jd-W7F"/>
-                                </connections>
-                            </button>
+                            </mapView>
                         </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <accessibility key="accessibilityConfiguration">
@@ -109,6 +113,7 @@
                         <outlet property="countryLabel" destination="iRv-6p-Cfj" id="nO5-N6-25K"/>
                         <outlet property="gpsCoordinates" destination="uRD-Ey-YuP" id="Abo-9L-5r0"/>
                         <outlet property="localtionNameLabel" destination="CUK-wf-cq5" id="S3G-Bz-A5J"/>
+                        <outlet property="mapView" destination="tVh-Aw-dfr" id="w5n-OR-9zZ"/>
                         <outlet property="streetLabel" destination="hlh-ao-4YS" id="duc-Hn-kkZ"/>
                     </connections>
                 </viewController>

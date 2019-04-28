@@ -19,6 +19,9 @@ class ViewController: UIViewController {
     @IBOutlet weak var countryCodeLabel: UILabel!
     @IBOutlet weak var streetLabel: UILabel!
     @IBOutlet weak var localtionNameLabel: UILabel!
+    @IBOutlet weak var mapView: MKMapView!
+    
+    let regionRadius: CLLocationDistance = 1000
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -52,6 +55,11 @@ class ViewController: UIViewController {
                     
                     let num = (coordinatesArr?[1] as! NSString).floatValue;
                     let num2 = (coordinatesArr?[0] as! NSString).floatValue;
+                    
+                    
+                    let initialLocation = CLLocation(latitude: CLLocationDegrees(num), longitude: CLLocationDegrees(num2))
+                    self.centerMapOnLocation(location: initialLocation)
+
                     
                     let geoCoder = CLGeocoder()
                     let location = CLLocation(latitude: CLLocationDegrees(num), longitude: CLLocationDegrees(num2))
@@ -100,6 +108,12 @@ class ViewController: UIViewController {
                 debugPrint(response)
         }
         
+    }
+    
+    func centerMapOnLocation(location: CLLocation) {
+        let coordinateRegion = MKCoordinateRegion(center: location.coordinate,
+                                                  latitudinalMeters: regionRadius, longitudinalMeters: regionRadius)
+        mapView.setRegion(coordinateRegion, animated: true)
     }
 }
 
