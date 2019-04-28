@@ -12,6 +12,8 @@ import Alamofire;
 
 class ViewController: UIViewController {
 
+    @IBOutlet weak var gpsCoordinates: UILabel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -31,5 +33,19 @@ class ViewController: UIViewController {
         }
     }
     
+    @IBAction func getGPS(_ sender: Any) {
+        AF.request("http://abdulrahmanuh.com:3000/get-gps", method: .get)
+            .responseData { response in
+                debugPrint(response)
+                
+                if let data = response.data {
+                    let json = String(data: data, encoding: String.Encoding.utf8)
+                    //print("Failure Response: \(json)")
+                    
+                    self.gpsCoordinates.text = json;
+                    
+                }
+        }
+    }
 }
 
